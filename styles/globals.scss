@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  @apply text-darkgray bg-white m-0 p-0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+* {
+  @apply box-content;
+}
+
+h1 {
+  @apply text-3xl font-bold;
+}
+
+@layer components {
+  .sideBar {
+    @apply sticky w-[300px] top-0 left-0 h-screen px-8 flex flex-col bg-whitesmoke whitespace-nowrap overflow-hidden transition-all;
+
+    &.collapse {
+      @apply w-0 p-0;
+    }
+  }
+
+  .navLink {
+    @apply flex items-center gap-5 px-5 py-2 rounded font-semibold hover:cursor-pointer transition-all;
+
+    &.active,
+    &:hover {
+      @apply bg-blue text-white drop-shadow-md;
+    }
+  }
+
+  .searchBar {
+    @apply w-[359px] flex items-center gap-2 px-4 py-2 rounded bg-whitesmoke text-lg border-2 border-blue border-opacity-0 focus-within:border-opacity-100;
+
+    input {
+      background: none;
+      @apply flex-1 outline-none;
+    }
+  }
+
+  .dimButton {
+    @apply bg-darkblue rounded-lg;
+
+    > span {
+      @apply block px-3 py-1 items-center justify-center translate-y-[-3px] bg-blue text-white text-sm rounded-lg;
+    }
+
+    &:active {
+      > span {
+        @apply translate-y-[-1px];
+      }
+    }
+  }
+
+  .filterButton {
+    @apply border-2 border-gray px-5 py-1 text-gray rounded-2xl hover:cursor-pointer;
+
+    &:hover,
+    &.active {
+      @apply border-lightblue text-lightblue;
+    }
+  }
+}
