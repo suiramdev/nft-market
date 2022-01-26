@@ -17,9 +17,42 @@ h1 {
   @apply text-3xl font-bold;
 }
 
+h2 {
+  @apply text-2xl font-bold;
+}
+
+table {
+  @apply w-full table-auto;
+
+  tr {
+    @apply border-b-[1px] border-gray border-opacity-25;
+  }
+
+  th,
+  td {
+    @apply px-8 font-semibold text-left;
+  }
+
+  th {
+    @apply pb-2 text-gray;
+  }
+
+  td {
+    @apply py-2;
+
+    a {
+      @apply text-blue hover:cursor-pointer hover:text-darkblue;
+    }
+
+    * {
+      @apply float-left mr-2 align-middle;
+    }
+  }
+}
+
 @layer components {
   .sideBar {
-    @apply sticky w-[300px] top-0 left-0 h-screen px-8 flex flex-col bg-whitesmoke whitespace-nowrap overflow-hidden transition-all;
+    @apply sticky w-[350px] top-0 left-0 h-screen px-8 flex flex-col bg-whitesmoke whitespace-nowrap overflow-hidden transition-all;
 
     &.collapse {
       @apply w-0 p-0;
