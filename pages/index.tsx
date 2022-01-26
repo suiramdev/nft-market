@@ -7,7 +7,7 @@ import Card from "../components/Card";
 
 const Home: NextPage = () => {
   return (
-      <div>
+      <>
           <div className="relative h-[275px] rounded-xl overflow-hidden bg-whitesmoke bg-cover bg-center drop-shadow-lg" style={{
               backgroundImage: "url('unsplash.jpg')"
           }}>
@@ -40,7 +40,7 @@ const Home: NextPage = () => {
                   <Card/>
               </div>
           </div>
-      </div>
+      </>
   )
 }
 
