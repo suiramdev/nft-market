@@ -21,6 +21,16 @@ h2 {
   @apply text-2xl font-bold;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 table {
   @apply w-full table-auto;
 
@@ -45,7 +55,7 @@ table {
     }
 
     * {
-      @apply float-left mr-2 align-middle;
+      @apply float-left mr-2 align-middle my-auto;
     }
   }
 }

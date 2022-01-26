@@ -33,10 +33,10 @@ const View: NextPage = () => {
                                 <span>Seconds</span>
                             </div>
                         </div>
-                        <div className="mt-5 flex items-center border-2 border-darkblue rounded-2xl overflow-hidden text-xl">
-                            <input placeholder="0.00" className="flex-1 pl-5 outline-none"/>
-                            <span className="p-5 text-gray font-semibold text-sm">ETH</span>
-                            <button className="p-6 bg-blue hover:bg-darkblue text-white transition-all">Place bid</button>
+                        <div className="h-[75px] mt-5 flex items-center border-2 border-darkblue rounded-2xl overflow-hidden text-xl">
+                            <input type="number" placeholder="0.00" className="h-full flex-1 pl-5 outline-none"/>
+                            <span className="px-5 text-gray font-semibold text-sm">ETH</span>
+                            <button className="h-full px-6 bg-blue hover:bg-darkblue text-white transition-all">Place bid</button>
                         </div>
                     </div>
                 </div>
@@ -58,21 +58,21 @@ const View: NextPage = () => {
                             <td><BiTransfer/>Transfer</td>
                             <td>0.00</td>
                             <td><a>NullAddress</a></td>
-                            <td><a>suiramdev</a></td>
+                            <td><a>@suiramdev</a></td>
                             <td>now</td>
                         </tr>
                         <tr>
                             <td><BiTransfer/>Transfer</td>
                             <td>0.00</td>
                             <td><a>NullAddress</a></td>
-                            <td><a>suiramdev</a></td>
+                            <td><a>@suiramdev</a></td>
                             <td>now</td>
                         </tr>
                         <tr>
                             <td><BiTransfer/>Transfer</td>
                             <td>0.00</td>
                             <td><a>NullAddress</a></td>
-                            <td><a>suiramdev</a></td>
+                            <td><a>@suiramdev</a></td>
                             <td>now</td>
                         </tr>
                     </tbody>
