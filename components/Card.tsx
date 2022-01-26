@@ -6,7 +6,7 @@ import DimButton from "./DimButton";
 
 const Card = () => {
     return (
-        <div className="flex flex-col w-[275px] h-[350px] rounded-2xl bg-whitesmoke overflow-hidden drop-shadow-sm hover:drop-shadow-lg hover:cursor-pointer transition-all">
+        <div className="flex flex-col w-[300px] h-[375px] rounded-2xl bg-whitesmoke overflow-hidden drop-shadow-sm hover:drop-shadow-lg hover:cursor-pointer transition-all">
             <Image src={nftPlaceholder} layout={"responsive"} objectFit={"contain"} height={300}/>
             <div className="flex flex-1 flex-col justify-between p-5">
                 <div>
