@@ -7,14 +7,14 @@ import profilePic from "../public/profile_picture.png";
 const Card = () => {
     return (
         <Link href="/view">
-            <div className="flex h-[375px] w-[300px] flex-col overflow-hidden rounded-2xl bg-whitesmoke drop-shadow-sm transition-all hover:cursor-pointer hover:drop-shadow-lg">
+            <div className="flex flex-col overflow-hidden rounded-2xl bg-whitesmoke drop-shadow-sm transition-all hover:cursor-pointer hover:drop-shadow-lg">
                 <Image
                     src={nftPlaceholder}
                     layout={"responsive"}
                     objectFit={"contain"}
                     height={300}
                 />
-                <div className="flex flex-1 flex-col justify-between p-5">
+                <div className="min-h-[150px] flex flex-1 flex-col justify-between p-5">
                     <div>
                         <span className="text-xl font-semibold">
                             Doodle owner

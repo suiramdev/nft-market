@@ -14,6 +14,11 @@ module.exports = {
       darkblue: "#2563EB",
       lightblue: "#7A9FFF",
       red: "#FF7171"
+    },
+    extend: {
+      gridTemplateColumns: {
+        autoFill: "repeat(auto-fit, minmax(300px, 1fr))",
+      }
     }
   },
   plugins: [],

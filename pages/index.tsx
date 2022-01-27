@@ -45,7 +45,7 @@ const Home: NextPage = () => {
                     <FilterButton name="Popular" active />
                     <FilterButton name="Recents" />
                 </div>
-                <div className="mt-10 flex flex-wrap gap-10">
+                <div className="mt-10 grid grid-cols-autoFill gap-10">
                     <Card />
                     <Card />
                     <Card />
@@ -58,4 +58,4 @@ const Home: NextPage = () => {
     );
 };
 
-export default Home
+export default Home;
