@@ -18,8 +18,8 @@ const SideBar = () => {
         <>
             <div
                 className={classNames(
-                    "sticky top-0 left-0 flex h-screen w-[350px] flex-col overflow-hidden whitespace-nowrap bg-whitesmoke px-8 transition-all",
-                    collapsed && "!w-0 !p-0"
+                    "sticky top-0 left-0 z-50 flex h-screen w-[350px] flex-col overflow-hidden whitespace-nowrap bg-whitesmoke px-8 transition-all lg:fixed",
+                    collapsed && "!w-0 !min-w-0 !p-0"
                 )}
             >
                 <div className="flex flex-row items-center pt-8 pb-16 text-2xl font-bold text-black">
@@ -27,7 +27,12 @@ const SideBar = () => {
                 </div>
                 <div className="flex flex-col flex-wrap">
                     <NavCategory name="Menu">
-                        <NavLink href="/" icon={<BiCubeAlt />} name="Explore" active />
+                        <NavLink
+                            href="/"
+                            icon={<BiCubeAlt />}
+                            name="Explore"
+                            active
+                        />
                         <NavLink icon={<BiStats />} name="Stats" />
                         <NavLink icon={<BiWalletAlt />} name="Wallet" />
                     </NavCategory>
