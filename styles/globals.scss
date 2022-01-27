@@ -4,109 +4,60 @@
 
 html,
 body {
-  @apply text-darkgray bg-white m-0 p-0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    @apply m-0 bg-white p-0 text-darkgray;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 * {
-  @apply box-content;
+    @apply box-content;
 }
 
 h1 {
-  @apply text-3xl font-bold;
+    @apply text-3xl font-bold;
 }
 
 h2 {
-  @apply text-2xl font-bold;
+    @apply text-2xl font-bold;
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
+input {
+    outline: none;
+    background: none;
 
-input[type=number] {
-  -moz-appearance: textfield;
+    &[type="number"] {
+        -moz-appearance: textfield;
+    }
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
 }
 
 table {
-  @apply w-full table-auto;
+    line-height: 1rem;
+    @apply w-full;
 
-  tr {
-    @apply border-b-[1px] border-gray border-opacity-25;
-  }
-
-  th,
-  td {
-    @apply px-8 font-semibold text-left;
-  }
-
-  th {
-    @apply pb-2 text-gray;
-  }
-
-  td {
-    @apply py-2;
-
-    a {
-      @apply text-blue hover:cursor-pointer hover:text-darkblue;
+    th,
+    td {
+        @apply px-5 border-b border-gray border-opacity-30;
     }
 
-    * {
-      @apply float-left mr-2 align-middle my-auto;
-    }
-  }
-}
-
-@layer components {
-  .sideBar {
-    @apply sticky w-[350px] top-0 left-0 h-screen px-8 flex flex-col bg-whitesmoke whitespace-nowrap overflow-hidden transition-all;
-
-    &.collapse {
-      @apply w-0 p-0;
-    }
-  }
-
-  .navLink {
-    @apply flex items-center gap-5 px-5 py-2 rounded font-semibold hover:cursor-pointer transition-all;
-
-    &.active,
-    &:hover {
-      @apply bg-blue text-white drop-shadow-md;
-    }
-  }
-
-  .searchBar {
-    @apply w-[359px] flex items-center gap-2 px-4 py-2 rounded bg-whitesmoke text-lg border-2 border-blue border-opacity-0 focus-within:border-opacity-100;
-
-    input {
-      background: none;
-      @apply flex-1 outline-none;
-    }
-  }
-
-  .dimButton {
-    @apply bg-darkblue rounded-lg;
-
-    > span {
-      @apply block px-3 py-1 items-center justify-center translate-y-[-3px] bg-blue text-white text-sm rounded-lg;
+    th {
+        @apply py-4 text-left text-gray;
     }
 
-    &:active {
-      > span {
-        @apply translate-y-[-1px];
-      }
-    }
-  }
+    td {
+        @apply py-2.5;
 
-  .filterButton {
-    @apply border-2 border-gray px-5 py-1 text-gray rounded-2xl hover:cursor-pointer;
+        a {
+            @apply text-blue hover:cursor-pointer hover:text-darkblue;
+        }
 
-    &:hover,
-    &.active {
-      @apply border-lightblue text-lightblue;
+        * {
+            @apply float-left mr-1;
+        }
     }
-  }
 }

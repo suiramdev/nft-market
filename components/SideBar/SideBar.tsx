@@ -1,31 +1,49 @@
-import React, {useState} from 'react';
+import React, {useState} from "react";
 import NavCategory from "./Navigation/NavCategory";
 import NavLink from "./Navigation/NavLink";
-import {BiArrowToLeft, BiArrowToRight, BiCubeAlt, BiLogOut, BiStats, BiWalletAlt} from "react-icons/bi";
+import {
+    BiArrowToLeft,
+    BiArrowToRight,
+    BiCubeAlt,
+    BiLogOut,
+    BiStats,
+    BiWalletAlt,
+} from "react-icons/bi";
+import classNames from "../../utils/classNames";
 
 const SideBar = () => {
     const [collapsed, setCollapse] = useState(false);
 
     return (
         <>
-            <div className={["sideBar", collapsed && "collapse"].join(" ")}>
-                <div className="flex flex-row items-center pt-8 pb-16 font-bold text-2xl">
-                    <h1 className="text-black">NFT MARKET</h1>
+            <div
+                className={classNames(
+                    "sticky top-0 left-0 flex h-screen w-[350px] flex-col overflow-hidden whitespace-nowrap bg-whitesmoke px-8 transition-all",
+                    collapsed && "!w-0 !p-0"
+                )}
+            >
+                <div className="flex flex-row items-center pt-8 pb-16 text-2xl font-bold text-black">
+                    <h1>NFT MARKET</h1>
                 </div>
-                <div className="flex flex-wrap flex-col">
+                <div className="flex flex-col flex-wrap">
                     <NavCategory name="Menu">
-                        <NavLink icon={<BiCubeAlt/>} name="Explore" active/>
-                        <NavLink icon={<BiStats/>} name="Stats"/>
-                        <NavLink icon={<BiWalletAlt/>} name="Wallet"/>
+                        <NavLink href="/" icon={<BiCubeAlt />} name="Explore" active />
+                        <NavLink icon={<BiStats />} name="Stats" />
+                        <NavLink icon={<BiWalletAlt />} name="Wallet" />
                     </NavCategory>
                     <NavCategory name="Account">
-                        <NavLink icon={<BiLogOut/>} name="Log Out"/>
+                        <NavLink icon={<BiLogOut />} name="Log Out" />
                     </NavCategory>
                 </div>
             </div>
-            <button className="fixed bottom-5 left-5 text-3xl z-50" onClick={() => setCollapse(!collapsed)}>{collapsed ? (<BiArrowToLeft/>) : <BiArrowToRight/>}</button>
+            <button
+                className="fixed bottom-5 left-5 z-50 text-3xl"
+                onClick={() => setCollapse(!collapsed)}
+            >
+                {collapsed ? <BiArrowToLeft /> : <BiArrowToRight />}
+            </button>
         </>
     );
-}
+};
 
 export default SideBar;
