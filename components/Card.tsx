@@ -36,9 +36,11 @@ const Card = () => {
                             <span className="font-semibold">3.09</span>
                             <span className="text-xs text-gray">ETH</span>
                         </div>
-                        <button className="rounded-lg bg-blue px-2 py-1 text-xs text-white transition-colors hover:bg-darkblue">
-                            <span>Place bid</span>
-                        </button>
+                        <Link href="/view">
+                            <button className="rounded-lg bg-blue px-2 py-1 text-xs text-white transition-colors hover:bg-darkblue">
+                                <span>Place bid</span>
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </div>

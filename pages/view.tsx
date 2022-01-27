@@ -1,10 +1,16 @@
 import type {NextPage} from "next";
+import {useRef, useState} from "react";
 import Image from "next/image";
 import nftPlaceholder from "../public/nft_placeholder.png";
 import profilePicture from "../public/profile_picture.png";
 import {BiTransfer} from "react-icons/bi";
+import Popup from "../components/Popup";
 
 const View: NextPage = () => {
+    const bidRef = useRef(null);
+    const [showPopup, setShowPopup] = useState(false);
+
+    // @ts-ignore
     return (
         <>
             <div className="flex flex-wrap gap-10">
@@ -43,7 +49,14 @@ const View: NextPage = () => {
                                 <span>Seconds</span>
                             </div>
                         </div>
-                        <div className="mt-5 flex h-[75px] items-center overflow-hidden rounded-2xl border-2 border-darkblue text-xl">
+                        <form
+                            className="mt-5 flex h-[75px] items-center overflow-hidden rounded-2xl border-2 border-darkblue text-xl"
+                            onSubmit={(e) => {
+                                e.preventDefault();
+                                // @ts-ignore
+                                bidRef.current?.value > 0 && setShowPopup(!showPopup);
+                            }}
+                        >
                             <input
                                 type="number"
                                 min="0"
@@ -55,6 +68,8 @@ const View: NextPage = () => {
                                 }}
                                 placeholder="0,000"
                                 className="h-full flex-1 pl-5 outline-none"
+                                ref={bidRef}
+                                required
                             />
                             <span className="px-5 text-sm font-semibold text-gray">
                                 ETH
@@ -62,7 +77,15 @@ const View: NextPage = () => {
                             <button className="h-full bg-blue px-6 text-white transition-all hover:bg-darkblue">
                                 Place bid
                             </button>
-                        </div>
+                        </form>
+                        <Popup
+                            title="Are you sure ?"
+                            // @ts-ignore
+                            message={`You are about to transfer ${bidRef.current?.value} ETH to the owner of this NFT. This action cannot be undone.`}
+                            confirmText="I'm sure"
+                            trigger={showPopup}
+                            setTrigger={setShowPopup}
+                        />
                     </div>
                 </div>
             </div>

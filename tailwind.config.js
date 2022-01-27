@@ -18,7 +18,16 @@ module.exports = {
     extend: {
       gridTemplateColumns: {
         autoFill: "repeat(auto-fit, minmax(300px, 1fr))",
-      }
+      },
+      keyframes: {
+        scaleUp: {
+          "0%": { transform: "scale(0)" },
+          "100%": { transform: "scale(1)" }
+        }
+      },
+      animation: {
+        scaleUp: "scaleUp 0.2s ease-in-out",
+      },
     },
     screens: {
       '2xl': {'max': '1535px'},
