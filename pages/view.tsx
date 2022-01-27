@@ -14,7 +14,7 @@ const View: NextPage = () => {
                     height={525}
                     className="rounded-xl"
                 />
-                <div className="flex gap-14 flex-1 flex-col justify-between">
+                <div className="flex flex-1 flex-col justify-between gap-14">
                     <div>
                         <div className="flex items-center gap-2 text-gray">
                             <Image
@@ -46,7 +46,14 @@ const View: NextPage = () => {
                         <div className="mt-5 flex h-[75px] items-center overflow-hidden rounded-2xl border-2 border-darkblue text-xl">
                             <input
                                 type="number"
-                                placeholder="0.00"
+                                min="0"
+                                step="0.001"
+                                onInput={(e) => {
+                                    // @ts-ignore
+                                    // prettier-ignore
+                                    e.target.value = e.target.value >= e.target.min && e.target.value;
+                                }}
+                                placeholder="0,000"
                                 className="h-full flex-1 pl-5 outline-none"
                             />
                             <span className="px-5 text-sm font-semibold text-gray">
