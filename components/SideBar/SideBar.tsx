@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import Link from "next/link";
 import NavCategory from "./Navigation/NavCategory";
 import NavLink from "./Navigation/NavLink";
 import {
@@ -22,8 +23,10 @@ const SideBar = () => {
                     collapsed && "!w-0 !min-w-0 !p-0"
                 )}
             >
-                <div className="flex flex-row items-center pt-8 pb-16 text-2xl font-bold text-black">
-                    <h1>NFT MARKET</h1>
+                <div className="flex flex-row items-center pt-8 pb-16 text-3xl font-bold text-black">
+                    <Link href="/">
+                        <a>NFT MARKET</a>
+                    </Link>
                 </div>
                 <div className="flex flex-col flex-wrap">
                     <NavCategory name="Menu">
