@@ -1,7 +1,7 @@
 import React, {MutableRefObject, useRef, useState} from "react";
 import Image from "next/image";
 import Link from "next/link";
-import nftPlaceholder from "../public/nft_Placeholder.png";
+import nftPlaceholder from "../public/nft_placeholder.png";
 import profilePic from "../public/profile_picture.png";
 import ethereum from "../public/ethereum.png";
 import Popup from "./Popup";
