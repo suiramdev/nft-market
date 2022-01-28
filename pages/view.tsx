@@ -1,5 +1,5 @@
 import type {NextPage} from "next";
-import {useRef, useState} from "react";
+import React, {MutableRefObject, useRef, useState} from "react";
 import Image from "next/image";
 import nftPlaceholder from "../public/nft_placeholder.png";
 import profilePicture from "../public/profile_picture.png";
@@ -7,10 +7,9 @@ import {BiTransfer} from "react-icons/bi";
 import Popup from "../components/Popup";
 
 const View: NextPage = () => {
-    const bidRef = useRef(null);
+    const bidRef: MutableRefObject<any> = useRef(null);
     const [showPopup, setShowPopup] = useState(false);
 
-    // @ts-ignore
     return (
         <>
             <div className="flex flex-wrap gap-10">
@@ -53,16 +52,15 @@ const View: NextPage = () => {
                             className="mt-5 flex h-[75px] items-center overflow-hidden rounded-2xl border-2 border-darkblue text-xl"
                             onSubmit={(e) => {
                                 e.preventDefault();
-                                // @ts-ignore
-                                bidRef.current?.value > 0 && setShowPopup(!showPopup);
+                                bidRef.current?.value > 0 &&
+                                    setShowPopup(!showPopup);
                             }}
                         >
                             <input
                                 type="number"
                                 min="0"
                                 step="0.001"
-                                onInput={(e) => {
-                                    // @ts-ignore
+                                onInput={(e: any) => {
                                     // prettier-ignore
                                     e.target.value = e.target.value >= e.target.min && e.target.value;
                                 }}
@@ -78,14 +76,34 @@ const View: NextPage = () => {
                                 Place bid
                             </button>
                         </form>
-                        <Popup
-                            title="Are you sure ?"
-                            // @ts-ignore
-                            message={`You are about to transfer ${bidRef.current?.value} ETH to the owner of this NFT. This action cannot be undone.`}
-                            confirmText="I'm sure"
-                            trigger={showPopup}
-                            setTrigger={setShowPopup}
-                        />
+                        <Popup trigger={showPopup}>
+                            <div className="flex flex-col items-center gap-2">
+                                <span className="text-3xl font-semibold">
+                                    Are you sure ?
+                                </span>
+                                <span className="text-lg">
+                                    You are about to place a bid of {bidRef.current?.value} ETH.
+                                </span>
+                            </div>
+                            <div className="flex gap-8">
+                                <button
+                                    className="rounded-lg bg-blue px-10 py-2 text-white transition-all hover:bg-darkblue"
+                                    onClick={() => {
+                                        setShowPopup(!showPopup);
+                                    }}
+                                >
+                                    I'm sure
+                                </button>
+                                <button
+                                    className="rounded-lg border-2 border-gray px-5 py-2 text-gray transition-all hover:border-red hover:text-red"
+                                    onClick={() => {
+                                        setShowPopup(!showPopup);
+                                    }}
+                                >
+                                    Take me back
+                                </button>
+                            </div>
+                        </Popup>
                     </div>
                 </div>
             </div>
