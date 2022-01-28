@@ -17,7 +17,7 @@ module.exports = {
     },
     extend: {
       gridTemplateColumns: {
-        autoFill: "repeat(auto-fit, minmax(275px, 1fr))",
+        autoFill: "repeat(auto-fit, minmax(250px, 1fr))",
       },
       keyframes: {
         scaleUp: {

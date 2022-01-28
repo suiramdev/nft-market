@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useLayoutEffect, useState} from "react";
 import Link from "next/link";
 import NavCategory from "./Navigation/NavCategory";
 import NavLink from "./Navigation/NavLink";
@@ -7,6 +7,18 @@ import classNames from "../../utils/classNames";
 
 const SideBar = () => {
     const [collapsed, setCollapse] = useState(false);
+
+    useLayoutEffect(() => {
+        const handleResize = () => {
+            setCollapse(document.body.clientWidth < 639);
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
 
     return (
         <>

@@ -11,7 +11,7 @@ const Header = () => {
                 <input type="text" placeholder="Search" className="flex-1"/>
             </div>
             <a className="flex items-center gap-4 text-right hover:cursor-pointer">
-                <div className="flex flex-col">
+                <div className="flex flex-col md:hidden">
                     <p className="text-sl">Welcome back,</p>
                     <p className="text-sl font-semibold text-blue">@suiramdev</p>
                 </div>
