@@ -50,7 +50,7 @@ const View: NextPage = () => {
                                 e.preventDefault();
                                 bidRef.current?.value > 0 && setShowPopup(!showPopup);
                             }}>
-                            <div className="px-5 flex flex-1 items-center">
+                            <div className="px-5 flex flex-1 gap-2 items-center">
                                 <Image src={ethereum} width={16} height={24}/>
                                 <input type="number"
                                        min="0"
@@ -60,7 +60,7 @@ const View: NextPage = () => {
                                            e.target.value = e.target.value >= e.target.min && e.target.value;
                                        }}
                                        placeholder="0,000"
-                                       className="h-full flex-1 pl-5 outline-none"
+                                       className="h-full flex-1 outline-none"
                                        ref={bidRef}
                                        required/>
                                 <span className="text-sm font-semibold text-gray">ETH</span>
@@ -97,7 +97,7 @@ const View: NextPage = () => {
                 </div>
             </div>
             <h2 className="mt-10 mb-5">Trading History</h2>
-            <div className="rounded bg-whitesmoke p-5 font-semibold">
+            <div className="overflow-x-scroll rounded bg-whitesmoke p-5 font-semibold">
                 <table>
                     <thead>
                         <tr>
