@@ -5,6 +5,7 @@ import nftPlaceholder from "../public/nft_placeholder.png";
 import profilePicture from "../public/profile_picture.png";
 import {BiTransfer} from "react-icons/bi";
 import Popup from "../components/Popup";
+import ethereum from "../public/ethereum.png";
 
 const View: NextPage = () => {
     const bidRef: MutableRefObject<any> = useRef(null);
@@ -43,25 +44,27 @@ const View: NextPage = () => {
                                 <span>Seconds</span>
                             </div>
                         </div>
-                        <form className="mt-5 flex h-[75px] items-center overflow-hidden rounded-2xl border-2 border-darkblue text-xl"
-                              onSubmit={(e) => {
-                                  e.preventDefault();
-                                  bidRef.current?.value > 0 && setShowPopup(!showPopup);
-                              }}>
-                            <input type="number"
-                                   min="0"
-                                   step="0.001"
-                                   onInput={(e: any) => {
-                                       // prettier-ignore
-                                       e.target.value = e.target.value >= e.target.min && e.target.value;
-                                   }}
-                                   placeholder="0,000"
-                                   className="h-full flex-1 pl-5 outline-none"
-                                   ref={bidRef}
-                                   required/>
-                            <span className="px-5 text-sm font-semibold text-gray">
-                                ETH
-                            </span>
+                        <form
+                            className="mt-5 flex h-[75px] items-center overflow-hidden rounded-2xl border-2 border-darkblue text-xl"
+                            onSubmit={(e) => {
+                                e.preventDefault();
+                                bidRef.current?.value > 0 && setShowPopup(!showPopup);
+                            }}>
+                            <div className="px-5 flex flex-1 items-center">
+                                <Image src={ethereum} width={16} height={24}/>
+                                <input type="number"
+                                       min="0"
+                                       step="0.001"
+                                       onInput={(e: any) => {
+                                           // prettier-ignore
+                                           e.target.value = e.target.value >= e.target.min && e.target.value;
+                                       }}
+                                       placeholder="0,000"
+                                       className="h-full flex-1 pl-5 outline-none"
+                                       ref={bidRef}
+                                       required/>
+                                <span className="text-sm font-semibold text-gray">ETH</span>
+                            </div>
                             <button className="h-full bg-blue px-6 text-white transition-all hover:bg-darkblue">
                                 Place bid
                             </button>
