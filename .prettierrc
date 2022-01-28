@@ -1,9 +1,0 @@
-{
-  "tailwindConfig": "./tailwind.config.js",
-  "tabWidth": 4,
-  "useTabs": false,
-  "semi": true,
-  "singleQuote": false,
-  "bracketSameLine": false,
-  "bracketSpacing": false
-}

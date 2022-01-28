@@ -9,12 +9,10 @@ interface IPopupProps {
 
 const Popup = (props: IPopupProps) => {
     return (
-        <div
-            className={classNames(
-                "fixed top-0 left-0 z-50 flex h-full w-full items-center justify-center bg-black bg-opacity-30",
-                !props.trigger && "hidden"
-            )}
-        >
+        <div className={classNames(
+            "fixed top-0 left-0 z-50 flex h-full w-full items-center justify-center bg-black bg-opacity-30",
+            !props.trigger && "hidden"
+        )}>
             <div className={classNames(
                 "flex max-w-[500px] animate-scaleUp flex-col items-center gap-12 rounded-2xl bg-white px-14 py-10 text-center drop-shadow-lg",
                 props.className

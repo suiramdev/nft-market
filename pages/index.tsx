@@ -8,21 +8,15 @@ import React from "react";
 const Home: NextPage = () => {
     return (
         <>
-            <div
-                className="relative h-[275px] overflow-hidden rounded-xl bg-whitesmoke bg-cover bg-center drop-shadow-lg"
-                style={{
-                    backgroundImage: "url('unsplash.jpg')",
-                }}
-            >
-                <div className="box-border flex h-full w-[350px] flex-col justify-between p-8 text-white backdrop-blur-sm">
+            <div className="relative h-[275px] overflow-hidden rounded-xl bg-whitesmoke bg-cover bg-center drop-shadow-lg"
+                 style={{
+                     backgroundImage: "url('unsplash.jpg')",
+                 }}>
+                <div
+                    className="box-border flex h-full w-[350px] flex-col justify-between p-8 text-white backdrop-blur-sm">
                     <div className="mt-[10%]">
                         <div className="flex items-center gap-1 text-gray">
-                            <Image
-                                src={profilePicture}
-                                height={32}
-                                width={32}
-                                className="rounded-full"
-                            />
+                            <Image src={profilePicture} height={32} width={32} className="rounded-full"/>
                             <span>@suiramdev</span>
                         </div>
                         <span className="text-3xl font-semibold">
@@ -42,8 +36,8 @@ const Home: NextPage = () => {
             <div className="mt-8 flex flex-col">
                 <h1>Explore</h1>
                 <div className="flex flex-wrap gap-x-5 gap-y-2 py-4">
-                    <FilterButton name="Popular" active />
-                    <FilterButton name="Recents" />
+                    <FilterButton name="Popular" active/>
+                    <FilterButton name="Recents"/>
                 </div>
                 <div className="mt-10 grid grid-cols-autoFill gap-10">
                     <Card />

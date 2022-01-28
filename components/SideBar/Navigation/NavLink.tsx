@@ -12,14 +12,12 @@ interface ICategoryProps {
 const NavLink = (props: ICategoryProps) => {
     return (
         <Link href={props.href || ""}>
-            <a
-                className={classNames(
-                    "flex items-center gap-5 rounded px-5 py-2 font-semibold transition-all hover:cursor-pointer",
-                    props.active
-                        ? "bg-blue text-white drop-shadow-md"
-                        : "hover:bg-blue hover:text-white hover:drop-shadow-md"
-                )}
-            >
+            <a className={classNames(
+                "flex items-center gap-5 rounded px-5 py-2 font-semibold transition-all hover:cursor-pointer",
+                props.active
+                    ? "bg-blue text-white drop-shadow-md"
+                    : "hover:bg-blue hover:text-white hover:drop-shadow-md"
+            )}>
                 {props.icon}
                 <span>{props.name}</span>
             </a>

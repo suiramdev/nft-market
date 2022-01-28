@@ -13,12 +13,7 @@ const View: NextPage = () => {
     return (
         <>
             <div className="flex flex-wrap gap-10">
-                <Image
-                    src={nftPlaceholder}
-                    width={525}
-                    height={525}
-                    className="rounded-xl"
-                />
+                <Image src={nftPlaceholder} width={525} height={525} className="rounded-xl"/>
                 <div className="flex flex-1 flex-col justify-between gap-14">
                     <div>
                         <div className="flex items-center gap-2 text-gray">
@@ -48,27 +43,22 @@ const View: NextPage = () => {
                                 <span>Seconds</span>
                             </div>
                         </div>
-                        <form
-                            className="mt-5 flex h-[75px] items-center overflow-hidden rounded-2xl border-2 border-darkblue text-xl"
-                            onSubmit={(e) => {
-                                e.preventDefault();
-                                bidRef.current?.value > 0 &&
-                                    setShowPopup(!showPopup);
-                            }}
-                        >
-                            <input
-                                type="number"
-                                min="0"
-                                step="0.001"
-                                onInput={(e: any) => {
-                                    // prettier-ignore
-                                    e.target.value = e.target.value >= e.target.min && e.target.value;
-                                }}
-                                placeholder="0,000"
-                                className="h-full flex-1 pl-5 outline-none"
-                                ref={bidRef}
-                                required
-                            />
+                        <form className="mt-5 flex h-[75px] items-center overflow-hidden rounded-2xl border-2 border-darkblue text-xl"
+                              onSubmit={(e) => {
+                                  e.preventDefault();
+                                  bidRef.current?.value > 0 && setShowPopup(!showPopup);
+                              }}>
+                            <input type="number"
+                                   min="0"
+                                   step="0.001"
+                                   onInput={(e: any) => {
+                                       // prettier-ignore
+                                       e.target.value = e.target.value >= e.target.min && e.target.value;
+                                   }}
+                                   placeholder="0,000"
+                                   className="h-full flex-1 pl-5 outline-none"
+                                   ref={bidRef}
+                                   required/>
                             <span className="px-5 text-sm font-semibold text-gray">
                                 ETH
                             </span>
@@ -86,20 +76,16 @@ const View: NextPage = () => {
                                 </span>
                             </div>
                             <div className="flex gap-8">
-                                <button
-                                    className="rounded-lg bg-blue px-10 py-2 text-white transition-all hover:bg-darkblue"
-                                    onClick={() => {
-                                        setShowPopup(!showPopup);
-                                    }}
-                                >
+                                <button className="rounded-lg bg-blue px-10 py-2 text-white transition-all hover:bg-darkblue"
+                                        onClick={() => {
+                                            setShowPopup(!showPopup);
+                                        }}>
                                     I'm sure
                                 </button>
-                                <button
-                                    className="rounded-lg border-2 border-gray px-5 py-2 text-gray transition-all hover:border-red hover:text-red"
-                                    onClick={() => {
-                                        setShowPopup(!showPopup);
-                                    }}
-                                >
+                                <button className="rounded-lg border-2 border-gray px-5 py-2 text-gray transition-all hover:border-red hover:text-red"
+                                        onClick={() => {
+                                            setShowPopup(!showPopup);
+                                        }}>
                                     Take me back
                                 </button>
                             </div>
@@ -121,45 +107,24 @@ const View: NextPage = () => {
                     </thead>
                     <tbody>
                         <tr>
-                            <td>
-                                <BiTransfer />
-                                Transfer
-                            </td>
+                            <td><BiTransfer />Transfer</td>
                             <td>0.00</td>
-                            <td>
-                                <a>NullAddress</a>
-                            </td>
-                            <td>
-                                <a>@suiramdev</a>
-                            </td>
+                            <td><a>NullAddress</a></td>
+                            <td><a>@suiramdev</a></td>
                             <td>now</td>
                         </tr>
                         <tr>
-                            <td>
-                                <BiTransfer />
-                                Transfer
-                            </td>
+                            <td><BiTransfer />Transfer</td>
                             <td>0.00</td>
-                            <td>
-                                <a>NullAddress</a>
-                            </td>
-                            <td>
-                                <a>@suiramdev</a>
-                            </td>
+                            <td><a>NullAddress</a></td>
+                            <td><a>@suiramdev</a></td>
                             <td>now</td>
                         </tr>
                         <tr>
-                            <td>
-                                <BiTransfer />
-                                Transfer
-                            </td>
+                            <td><BiTransfer />Transfer</td>
                             <td>0.00</td>
-                            <td>
-                                <a>NullAddress</a>
-                            </td>
-                            <td>
-                                <a>@suiramdev</a>
-                            </td>
+                            <td><a>NullAddress</a></td>
+                            <td><a>@suiramdev</a></td>
                             <td>now</td>
                         </tr>
                     </tbody>

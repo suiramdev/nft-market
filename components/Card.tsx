@@ -8,27 +8,13 @@ const Card = () => {
     return (
         <Link href="/view">
             <div className="flex flex-col overflow-hidden rounded-2xl bg-whitesmoke drop-shadow-sm transition-all hover:cursor-pointer hover:drop-shadow-lg">
-                <Image
-                    src={nftPlaceholder}
-                    layout={"responsive"}
-                    objectFit={"contain"}
-                    height={300}
-                />
+                <Image src={nftPlaceholder} layout={"responsive"} objectFit={"contain"} height={300}/>
                 <div className="min-h-[150px] flex flex-1 flex-col justify-between p-5">
                     <div>
-                        <span className="text-xl font-semibold">
-                            Doodle owner
-                        </span>
+                        <span className="text-xl font-semibold">Doodle owner</span>
                         <div className="flex items-center gap-1">
-                            <Image
-                                src={profilePic}
-                                width={24}
-                                height={24}
-                                className="rounded-full"
-                            />
-                            <span className="text-sm text-gray">
-                                @suiramdev
-                            </span>
+                            <Image src={profilePic} width={24} height={24} className="rounded-full"/>
+                            <span className="text-sm text-gray">@suiramdev</span>
                         </div>
                     </div>
                     <div className="flex justify-between">

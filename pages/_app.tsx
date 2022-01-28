@@ -6,10 +6,10 @@ import Header from "../components/Header";
 function MyApp({Component, pageProps}: AppProps) {
     return (
         <div className="flex">
-            <SideBar />
+            <SideBar/>
             <div className="mx-12 flex w-full flex-col py-8">
-                <Header />
-                <Component {...pageProps} />
+                <Header/>
+                <Component {...pageProps}/>
             </div>
         </div>
     );
