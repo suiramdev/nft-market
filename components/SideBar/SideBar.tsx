@@ -11,8 +11,8 @@ const SideBar = () => {
     return (
         <>
             <div className={classNames(
-                "sticky top-0 left-0 z-50 flex h-screen w-[350px] flex-col overflow-hidden whitespace-nowrap bg-whitesmoke px-8 transition-all lg:fixed",
-                collapsed && "!w-0 !min-w-0 !p-0"
+                "sticky top-0 left-0 z-50 flex h-full w-[350px] flex-col overflow-hidden whitespace-nowrap bg-whitesmoke px-8 transition-all lg:fixed sm:w-full",
+                collapsed && "!w-0 !p-0"
             )}>
                 <div className="flex flex-row items-center pt-8 pb-16 text-3xl font-bold text-black">
                     <Link href="/">

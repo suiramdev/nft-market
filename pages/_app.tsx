@@ -7,7 +7,7 @@ function MyApp({Component, pageProps}: AppProps) {
     return (
         <div className="flex">
             <SideBar/>
-            <div className="mx-12 flex w-full flex-col py-8">
+            <div className="mx-12 flex w-full flex-col py-8 sm:mx-0">
                 <Header/>
                 <Component {...pageProps}/>
             </div>
