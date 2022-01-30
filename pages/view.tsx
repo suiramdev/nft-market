@@ -1,18 +1,20 @@
 import type {NextPage} from "next";
 import React, {MutableRefObject, useRef, useState} from "react";
 import Image from "next/image";
-import nftPlaceholder from "../public/nft_placeholder.png";
-import profilePicture from "../public/profile_picture.png";
+import nftPlaceholder from "../public/images/nft_placeholder.png";
+import profilePicture from "../public/images/profile_picture.png";
 import {BiTransfer} from "react-icons/bi";
 import Popup from "../components/Popup";
-import ethereum from "../public/ethereum.png";
+import ethereum from "../public/images/ethereum.png";
+import Header from "../components/Header";
 
 const View: NextPage = () => {
     const bidRef: MutableRefObject<any> = useRef(null);
     const [showPopup, setShowPopup] = useState(false);
 
     return (
-        <>
+        <div className="flex flex-col py-8 mx-12 w-full">
+            <Header/>
             <div className="flex flex-wrap gap-10">
                 <Image src={nftPlaceholder} width={525} height={525} className="rounded-xl"/>
                 <div className="flex flex-1 flex-col justify-between gap-14">
@@ -133,7 +135,7 @@ const View: NextPage = () => {
                     </tbody>
                 </table>
             </div>
-        </>
+        </div>
     );
 };
 

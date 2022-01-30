@@ -14,7 +14,7 @@ const Popup = (props: IPopupProps) => {
             !props.trigger && "hidden"
         )}>
             <div className={classNames(
-                "flex max-w-[500px] animate-scaleUp flex-col items-center gap-12 rounded-2xl bg-white px-14 py-10 text-center drop-shadow-lg",
+                "flex max-w-[500px] animate-scaleUp flex-col items-center gap-10 rounded-2xl bg-white p-8 text-center drop-shadow-lg",
                 props.className
             )}>
                 {props.children}

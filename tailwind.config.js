@@ -9,6 +9,7 @@ module.exports = {
       whitesmoke: "#FAFBFE",
       gray: "#BFBFBF",
       darkgray: "#535353",
+      lightgray: "#efefef",
       black: "#000000",
       blue: "#3B82F6",
       darkblue: "#2563EB",

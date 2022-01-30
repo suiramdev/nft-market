@@ -1,17 +1,18 @@
 import type {NextPage} from "next";
 import Image from "next/image";
-import profilePicture from "../public/profile_picture.png";
+import unsplashPhoto from "../public/images/unsplash.jpg";
+import profilePicture from "../public/images/profile_picture.png";
 import FilterButton from "../components/FilterButton";
 import Card from "../components/Card";
 import React from "react";
+import Header from "../components/Header";
 
 const Home: NextPage = () => {
     return (
-        <>
-            <div className="relative h-[275px] overflow-hidden rounded-xl bg-whitesmoke bg-cover bg-center drop-shadow-lg"
-                 style={{
-                     backgroundImage: "url('unsplash.jpg')",
-                 }}>
+        <div className="flex flex-col py-8 mx-12 w-full">
+            <Header/>
+            <div className="relative h-[275px] overflow-hidden rounded-xl bg-whitesmoke drop-shadow-lg">
+                <Image src={unsplashPhoto} alt="Hero NFT" layout={"fill"} objectFit={"cover"} className="absolute"/>
                 <div
                     className="box-border flex h-full w-[350px] flex-col justify-between p-8 text-white backdrop-blur-sm">
                     <div className="mt-[10%]">
@@ -48,7 +49,7 @@ const Home: NextPage = () => {
                     <Card />
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 
